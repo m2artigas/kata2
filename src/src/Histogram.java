@@ -3,20 +3,20 @@ package src;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Histogram {
-    private final int[] data;
+public class Histogram <T>{
+    private final T[] data;
 
-    public Histogram(int[] data) {
+    public Histogram(T[] data) {
         this.data = data;
     }
 
-    public int[] getData() {
+    public T[] getData() {
         return this.data;
     }
 
-    public Map<Integer, Integer> getHistogram() {
-        Map<Integer, Integer> histogram = new HashMap<Integer, Integer>();
-        for (int key : this.data) {
+    public Map<T, Integer> getHistogram() {
+        Map<T, Integer> histogram = new HashMap<T, Integer>();
+        for (T key : this.data) {
             histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
         return histogram;
